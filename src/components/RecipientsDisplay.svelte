@@ -30,28 +30,26 @@
         }
 
         numOfHiddenMess += recipients.length - sentToRecipient.length
-        //From the "for loop", don't want to mutate the array
         if (sentToRecipient[sentToRecipient.length - 1].includes(' ...')) numOfHiddenMess++
         badgeNum = numOfHiddenMess
-
     }
 
     onMount(() => {
         handleResize()
     })
+
     window.addEventListener('resize', handleResize)
 </script>
 
-
-
 <style lang="scss">
   section {
-    //Depending on your style, I would re-style to be consistent with the codebase
+    //I don't know the company's styling standard
   display: flex;
   align-items: center;
   justify-content: space-between;
   }
-  // Prefer to use em's (or ems?)
+
+  // Would prefer to use ems
   div.recipient {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -59,7 +57,7 @@
     color: #333333;
     padding: 5px 10px;
   }
-  // Prefer to use em's (or ems?)
+
   div.badgeNum {
     font-size: 16px;
     color: #f0f0f0;
